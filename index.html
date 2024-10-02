@@ -31,7 +31,6 @@
     </style>
 </head>
 <body>
-    <h1>Раздолбаи</h1>
     <button class="button" id="showAlert">Show Alert</button>
     <button class="button" id="showConfirm">Show Confirm</button>
     <button class="button" id="showPopup">Show Popup</button>
@@ -66,12 +65,12 @@
             });
         });
 
-        tg.MainButton.setText("Main Action").show().onClick(function () {
+        tg.MainButton.setText("Погнали!").show().onClick(function () {
             tg.showAlert("Main button clicked!");
         });
 
         tg.BackButton.show().onClick(function () {
-            tg.showAlert("Back button clicked!");
+            window.close();
         });
 
         tg.onEvent('mainButtonClicked', function () {

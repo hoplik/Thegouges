@@ -35,14 +35,12 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
 
-        tg.MainButton.setText("Погнали!").show().enable());
+        tg.MainButton.setText("Погнали!").show().onClick(function () {
+            tg.location.href='game.html'
+        });
 
         tg.BackButton.show().onClick(function () {
             tg.close();
-        });
-
-        tg.onEvent('mainButtonClicked', function () {
-            tg.location.href='game.html'
         });
     </script>
 </body>

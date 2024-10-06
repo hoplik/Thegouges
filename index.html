@@ -31,13 +31,9 @@
     </style>
 </head>
 <body>
-    <button class="button" id="alterbutton">Запуск игры</button>
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-        document.getElementById('alterbutton').addEventListener('click', function() {
-            tg.showAlert("Нажали дополнительную клавишу");
-        });
         tg.MainButton.setText("Погнали!").show().onClick(function () {
             tg.showAlert("Нажали основную клавишу");
         });

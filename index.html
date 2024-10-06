@@ -35,7 +35,7 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
         tg.MainButton.setText("Погнали!").show().onClick(function () {
-            tg.openUrl(./test.html);
+            window.location.href="test.html";
         });
         tg.BackButton.show().onClick(function () {
             tg.close();

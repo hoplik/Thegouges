@@ -36,6 +36,7 @@
         tg.expand();
         tg.MainButton.setText("Погнали!").show().onClick(function () {
             tg.showAlert("Нажали основную клавишу");
+            tg.openUrl('game.html');
         });
         tg.BackButton.show().onClick(function () {
             tg.close();

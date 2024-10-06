@@ -34,11 +34,10 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-
         tg.MainButton.setText("Погнали!").show().onClick(function () {
-            <a href="javascript:tg.openTelegramLink('game.html');"></a>
+            tg.showAlert("You clicked the button!");
+            <a href="javascript:tg.openTelegramLink('game.html')"></a>;
         });
-
         tg.BackButton.show().onClick(function () {
             tg.close();
         });

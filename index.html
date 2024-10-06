@@ -34,8 +34,9 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-        tg.MainButton.setText("Погнали!").show().onClick(function () {
+        tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href="game.html";
+            tg.MainButton.hide();
         });
         tg.BackButton.show().onClick(function () {
             tg.close();

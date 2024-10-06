@@ -31,11 +31,16 @@
     </style>
 </head>
 <body>
+    <h1>Interactive Telegram Mini App</h1>
+    <button class="button" id="alterbutton">Запуск игры</button>
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
+        document.getElementById('alterbutton').addEventListener('click', function() {
+            tg.showAlert("Нажали дополнительную клавишу");
+        });
         tg.MainButton.setText("Погнали!").show().onClick(function () {
-            tg.showAlert("You clicked the button!");
+            tg.showAlert("Нажали основную клавишу");
             <a href="javascript:tg.openTelegramLink('game.html')"></a>;
         });
         tg.BackButton.show().onClick(function () {

@@ -4,15 +4,15 @@
     <meta charset="utf-8"
           name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>Поиграем!</title>
+    <title>Раздолбаи</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin-top: 300px;
             padding: 20px;
-            color: var(--tg-theme-text-color);
-            background-color: var(--tg-theme-bg-color);
+            color: yellow;
+            background-color: black;
             background-image: url(./img/title.png);
             background-repeat: no-repeat;
             background-position: center top;
@@ -31,11 +31,33 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Добро пожаловать в игру "Раздолбаи"</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Особенности</h2>
+            <ul>
+                <li>Пока нет учёта времени находжения в игре</li>
+                <li>Пока нет персональной привязки</li>
+                <li>Пока нет мультиигрового процесса</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Правила игры</h2>
+            <ul>
+                <li>Время - деньги, знания - сила, а Надежда умирает последней!</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 "The Gouges" Mini App</p>
+    </footer>
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
-            window.location.href="game.html";
+            window.location.href = "game.html";
             tg.MainButton.hide();
             tg.BackButton.hide();
         });

@@ -59,12 +59,11 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
         // Получаем и декодируем initData
-        let initData = tg.initData || '';
-        let initDataUnsafe = tg.initDataUnsafe || {};
+        //let initDataUnsafe = tg.initDataUnsafe || {};
         // Проверяем авторизацию пользователя
-        if (initDataUnsafe.user) {
-            document.getElementsById('header_hello').setText(initDataUnsafe.user.first_name);
-        }
+        //if (initDataUnsafe.user) {
+        //    document.getElementsById('header_hello').setText(initDataUnsafe.user.first_name);
+        //}
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href = "game.html";
             tg.MainButton.hide();

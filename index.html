@@ -64,6 +64,8 @@
         //if (initDataUnsafe.user) {
         //    document.getElementsById('header_hello').setText(initDataUnsafe.user.first_name);
         //}
+        let user_name = tg.WebAppUser.username;
+        document.getElementById('shareButton').setText(user_name);
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href = "game.html";
             tg.MainButton.hide();

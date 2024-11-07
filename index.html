@@ -32,7 +32,7 @@
 </head>
 <body>
     <header>
-        <h1 id="header_hello">Добро пожаловать в игру "Раздолбаи"</h1>
+        <h1 id="header_hello"></h1>
     </header>
     <main>
         <section>
@@ -63,12 +63,13 @@
         // Проверяем авторизацию пользователя
         if (initDataUnsafe.user) {
             let hello_user = document.createElement('h1');
-            hello_user.textContent = 'Приветствуем ${initDataUnsafe.user.first_name}!';
-            document.getElementsById('header_hello').appendChild(hello_user);
+            let un = Object.keys(initDataUnsafe.user.first_name);
+            hello_user.textContent = un;
+            document.getElementById('header_hello').innerText(hello_user);
         } else {
             let unknown_user = document.createElement('h1');
             unknown_user.textContent = 'Привет тебе, Незнакомец!';
-            document.getElementsById('header_hello').appendChild(unknown_user);
+            document.getElementById('header_hello').appendChild(unknown_user);
         }
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href = "game.html";

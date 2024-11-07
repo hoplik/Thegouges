@@ -59,18 +59,17 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
         // Получаем и декодируем initData
-        const { first_name, last_name, username } = window.Telegram.WebAppUser;
-        //let initDataUnsafe = tg.initDataUnsafe || {};
+        let initDataUnsafe = tg.initDataUnsafe || {};
         // Проверяем авторизацию пользователя
-        if (first_name) {
+        if (initDataUnsafe.user) {
             let hello_user = document.createElement('h1');
-            let un = Object.keys(first_name);
+            let un = Object.keys(initDataUnsafe.user.first_name);
             hello_user.textContent = 'Привет тебе, ' + un;
             document.getElementById('header_hello').appendChild(hello_user);
         } else {
             let unknown_user = document.createElement('h1');
             unknown_user.textContent = 'Привет тебе, Незнакомец!';
-            document.getElementById('header_hello').appendChild(unknown_user);
+            document.getElementById('header_hello').innerText(unknown_user);
         }
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href = "game.html";
@@ -81,7 +80,7 @@
             tg.close();
         });
         document.getElementById('shareButton').addEventListener('click', function () {
-            tg.shareApp();
+            tg.shareApp;
         });
     </script>
 </body>

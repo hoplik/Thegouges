@@ -59,13 +59,13 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
         // Получаем и декодируем initData
-        const { first_name, last_name, username } = tg.initDataUnsafe.user;
+        const { first_name, last_name, username } = window.Telegram.WebAppUser;
         //let initDataUnsafe = tg.initDataUnsafe || {};
         // Проверяем авторизацию пользователя
         if (first_name) {
             let hello_user = document.createElement('h1');
             let un = Object.keys(first_name);
-            hello_user.textContent = 'Привет тебе, ${ un }';
+            hello_user.textContent = 'Привет тебе, ' + un;
             document.getElementById('header_hello').appendChild(hello_user);
         } else {
             let unknown_user = document.createElement('h1');

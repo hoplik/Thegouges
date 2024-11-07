@@ -49,7 +49,7 @@
                 <li>Время - деньги, знания - сила, а Надежда умирает последней!</li>
             </ul>
             <h2>Понравилась игра?</h2>
-            <button class="button" id="shareButton">Поделиться с друзьями!</button>
+            <button onclick="TelegramGameProxy.shareScore()">Поделиться с друзьями!</button>
         </section>
     </main>
     <footer>
@@ -69,7 +69,7 @@
         } else {
             let unknown_user = document.createElement('h1');
             unknown_user.textContent = 'Привет тебе, Незнакомец!';
-            document.getElementById('header_hello').innerText(unknown_user);
+            document.getElementById('header_hello').appendChild(unknown_user);
         }
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href = "game.html";
@@ -79,9 +79,7 @@
         tg.BackButton.show().onClick(function () {
             tg.close();
         });
-        document.getElementById('shareButton').addEventListener('click', function () {
-            tg.shareApp();
-        });
     </script>
+    <script src="https://telegram.org/js/games.js"></script>
 </body>
 </html>

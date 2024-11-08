@@ -63,7 +63,7 @@
         // Проверяем авторизацию пользователя
         if (initDataUnsafe.user) {
             let hello_user = document.createElement('h2');
-            let un = Object.keys(initDataUnsafe.user.first_name);
+            let un = initDataUnsafe.user.first_name;
             hello_user.textContent = 'Привет тебе, ' + un;
             document.getElementById('header_hello').appendChild(hello_user);
         } else {

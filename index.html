@@ -38,8 +38,8 @@
         <section>
             <h2>Особенности</h2>
             <ul>
+                <li>Персональная привязка работает ТОЛЬКО при запуске игры из меню бота (вот такие пока библиотеки)</li>
                 <li>Пока нет учёта времени находжения в игре</li>
-                <li>Пока нет персональной привязки</li>
                 <li>Пока нет мультиигрового процесса</li>
             </ul>
         </section>
@@ -49,7 +49,7 @@
                 <li>Время - деньги, знания - сила, а Надежда умирает последней!</li>
             </ul>
             <h2>Понравилась игра?</h2>
-            <button>Поделиться с друзьями!</button>
+            <button class="button" onclick="window.location.href='https://t.me/Hoplik_Bot?game=gouges'">Поделиться с друзьями!</button>
         </section>
     </main>
     <footer>
@@ -58,7 +58,7 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-        // Получаем и декодируем initData
+        // Получаем и декодируем пользователя
         let initDataUnsafe = tg.initDataUnsafe || {};
         // Проверяем авторизацию пользователя
         if (initDataUnsafe.user) {
@@ -71,11 +71,13 @@
             unknown_user.textContent = 'Привет тебе, Незнакомец!';
             document.getElementById('header_hello').appendChild(unknown_user);
         }
+        // Нижняя основная кнопка
         tg.MainButton.setText("Сыгранём!").show().onClick(function () {
             window.location.href = "game.html";
             tg.MainButton.hide();
             tg.BackButton.hide();
         });
+        // Верхняя кнопка возврата
         tg.BackButton.show().onClick(function () {
             tg.close();
         });
